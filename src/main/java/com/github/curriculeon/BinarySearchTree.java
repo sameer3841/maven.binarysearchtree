@@ -12,6 +12,34 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         size = 0;
     }
 
+    private Value get(BinaryTreeNode<Key, Value> x, Key key) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> put(BinaryTreeNode<Key, Value> x, Key key, Value value) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> min(BinaryTreeNode<Key, Value> x) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> max(BinaryTreeNode<Key, Value> x) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> deleteMin(BinaryTreeNode<Key, Value> x) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> deleteMax(BinaryTreeNode<Key, Value> x) {
+        return null; // TODO
+    }
+
+    private BinaryTreeNode<Key, Value> delete(BinaryTreeNode<Key, Value> x, Key key) {
+        return null; // TODO
+    }
+
     public int size() {
         return size;
     }
@@ -65,33 +93,4 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     public void delete(Key key) {
         root = delete(root, key);
     }
-
-    private Value get(BinaryTreeNode<Key, Value> x, Key key) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> put(BinaryTreeNode<Key, Value> x, Key key, Value value) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> min(BinaryTreeNode<Key, Value> x) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> max(BinaryTreeNode<Key, Value> x) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> deleteMin(BinaryTreeNode<Key, Value> x) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> deleteMax(BinaryTreeNode<Key, Value> x) {
-        return null; // TODO
-    }
-
-    private BinaryTreeNode<Key, Value> delete(BinaryTreeNode<Key, Value> x, Key key) {
-        return null; // TODO
-    }
-
 }
