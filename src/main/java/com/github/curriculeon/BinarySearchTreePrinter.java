@@ -20,29 +20,14 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
     }
 
     private String printInOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
-        if (node != null) {
-            printInOrder(node.getLeft(), sb);
-            sb.append(node.getKey() + "\n");
-            printInOrder(node.getRight(), sb);
-        }
-        return sb.toString();
+        return null; // TODO
     }
 
     private String printPreOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
-        if (node != null) {
-            sb.append(node.getKey() + "\n");
-            printPreOrder(node.getLeft(), sb);
-            printPreOrder(node.getRight(), sb);
-        }
-        return sb.toString();
+        return null; // TODO
     }
 
     private String printPostOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
-        if (node != null) {
-            printPostOrder(node.getLeft(), sb);
-            printPostOrder(node.getRight(), sb);
-            sb.append(node.getKey() + "\n");
-        }
-        return sb.toString();
+        return null; // TODO
     }
 }

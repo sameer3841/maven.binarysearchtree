@@ -1,53 +1,45 @@
 package com.github.curriculeon;
 
 public class BinaryTreeNode<Key extends Comparable<Key>, Value> {
-    private Key key;
-    private Value value;
-    private BinaryTreeNode<Key, Value> left;
-    private BinaryTreeNode<Key, Value> right;
 
     public BinaryTreeNode(Key key, Value value) {
-        this.key = key;
-        this.value = value;
-        this.left = null;
-        this.right = null;
     }
 
     public Key getKey() {
-        return key;
+        return null; // TODO
     }
 
     public void setKey(Key key) {
-        this.key = key;
+        // TODO
     }
 
     public Value getValue() {
-        return value;
+        return null; // TODO
     }
 
     public void setValue(Value value) {
-        this.value = value;
+        // TODO
     }
 
     public BinaryTreeNode<Key, Value> getLeft() {
-        return left;
+        return null; // TODO
     }
 
     public void setLeft(BinaryTreeNode<Key, Value> left) {
-        this.left = left;
+        // TODO
     }
 
     public BinaryTreeNode<Key, Value> getRight() {
-        return right;
+        return null; // TODO
     }
 
     public void setRight(BinaryTreeNode<Key, Value> right) {
-        this.right = right;
+        // TODO
     }
 
     @Override
     public String toString() {
-        return "(" + key + ", " + value + ")";
+        return "(" + getKey() + ", " + getValue() + ")";
     }
 }
 

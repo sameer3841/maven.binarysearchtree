@@ -67,87 +67,31 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private Value get(BinaryTreeNode<Key, Value> x, Key key) {
-        if (x == null) {
-            return null;
-        }
-        int cmp = key.compareTo(x.getKey());
-        if (cmp < 0) {
-            return get(x.getLeft(), key);
-        } else if (cmp > 0) {
-            return get(x.getRight(), key);
-        } else {
-            return x.getValue();
-        }
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> put(BinaryTreeNode<Key, Value> x, Key key, Value value) {
-        if (x == null) {
-            size++;
-            return new BinaryTreeNode<Key, Value>(key, value);
-        }
-        int cmp = key.compareTo(x.getKey());
-        if (cmp < 0) {
-            x.setLeft(put(x.getLeft(), key, value));
-        } else if (cmp > 0) {
-            x.setRight(put(x.getRight(), key, value));
-        } else {
-            x.setValue(value);
-        }
-        return x;
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> min(BinaryTreeNode<Key, Value> x) {
-        if (x.getLeft() == null) {
-            return x;
-        }
-        return min(x.getLeft());
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> max(BinaryTreeNode<Key, Value> x) {
-        if (x.getRight() == null) {
-            return x;
-        }
-        return max(x.getRight());
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> deleteMin(BinaryTreeNode<Key, Value> x) {
-        if (x.getLeft() == null) {
-            return x.getRight();
-        }
-        x.setLeft(deleteMin(x.getLeft()));
-        return x;
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> deleteMax(BinaryTreeNode<Key, Value> x) {
-        if (x.getRight() == null) {
-            return x.getLeft();
-        }
-        x.setRight(deleteMax(x.getRight()));
-        return x;
+        return null; // TODO
     }
 
     private BinaryTreeNode<Key, Value> delete(BinaryTreeNode<Key, Value> x, Key key) {
-        if (x == null) {
-            return null;
-        }
-        int cmp = key.compareTo(x.getKey());
-        if (cmp < 0) {
-            x.setLeft(delete(x.getLeft(), key));
-        } else if (cmp > 0) {
-            x.setRight(delete(x.getRight(), key));
-        } else {
-            if (x.getRight() == null) {
-                return x.getLeft();
-            }
-            if (x.getLeft() == null) {
-                return x.getRight();
-            }
-            BinaryTreeNode<Key, Value> t = x;
-            x = min(t.getRight());
-            x.setRight(deleteMin(t.getRight()));
-            x.setLeft(t.getLeft());
-        }
-        return x;
+        return null; // TODO
     }
 
 }
