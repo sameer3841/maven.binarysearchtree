@@ -8,48 +8,39 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
     }
 
     public String printInOrder() {
-        return printInOrder(bst.getRoot(), 0, new StringBuilder());
+        return printInOrder(bst.getRoot(), new StringBuilder());
     }
 
     public String printPreOrder() {
-        return printPreOrder(bst.getRoot(), 0, new StringBuilder());
+        return printPreOrder(bst.getRoot(), new StringBuilder());
     }
 
     public String printPostOrder() {
-        return printPostOrder(bst.getRoot(), 0, new StringBuilder());
+        return printPostOrder(bst.getRoot(), new StringBuilder());
     }
 
-    private String printInOrder(BinaryTreeNode<Key, Value> node, int level, StringBuilder sb) {
+    private String printInOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
         if (node != null) {
-            printInOrder(node.getRight(), level + 1, sb);
-            for (int i = 0; i < level; i++) {
-                sb.append("    ");
-            }
+            printInOrder(node.getLeft(), sb);
             sb.append(node.getKey() + "\n");
-            printInOrder(node.getLeft(), level + 1, sb);
+            printInOrder(node.getRight(), sb);
         }
         return sb.toString();
     }
 
-    private String printPreOrder(BinaryTreeNode<Key, Value> node, int level,StringBuilder sb) {
+    private String printPreOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
         if (node != null) {
-            for (int i = 0; i < level; i++) {
-                sb.append("    ");
-            }
             sb.append(node.getKey() + "\n");
-            printPreOrder(node.getLeft(), level + 1, sb);
-            printPreOrder(node.getRight(), level + 1, sb);
+            printPreOrder(node.getLeft(), sb);
+            printPreOrder(node.getRight(), sb);
         }
         return sb.toString();
     }
 
-    private String printPostOrder(BinaryTreeNode<Key, Value> node, int level, StringBuilder sb) {
+    private String printPostOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
         if (node != null) {
-            printPostOrder(node.getLeft(), level + 1, sb);
-            printPostOrder(node.getRight(), level + 1, sb);
-            for (int i = 0; i < level; i++) {
-                sb.append("    ");
-            }
+            printPostOrder(node.getLeft(), sb);
+            printPostOrder(node.getRight(), sb);
             sb.append(node.getKey() + "\n");
         }
         return sb.toString();
