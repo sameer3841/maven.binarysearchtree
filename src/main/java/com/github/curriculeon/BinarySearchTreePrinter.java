@@ -7,15 +7,15 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
         this.bst = bst;
     }
 
-    private String printInOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
+    private String printInOrder(BinarySearchTreeNode<Key, Value> node, StringBuilder sb) {
         return null; // TODO
     }
 
-    private String printPreOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
+    private String printPreOrder(BinarySearchTreeNode<Key, Value> node, StringBuilder sb) {
         return null; // TODO
     }
 
-    private String printPostOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
+    private String printPostOrder(BinarySearchTreeNode<Key, Value> node, StringBuilder sb) {
         return null; // TODO
     }
 

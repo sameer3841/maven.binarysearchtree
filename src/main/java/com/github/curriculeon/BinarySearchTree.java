@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
-    private BinaryTreeNode<Key, Value> root;
+    private BinarySearchTreeNode<Key, Value> root;
     private int size;
 
     public BinarySearchTree() {
@@ -12,31 +12,31 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         size = 0;
     }
 
-    private Value get(BinaryTreeNode<Key, Value> x, Key key) {
+    private Value get(BinarySearchTreeNode<Key, Value> x, Key key) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> put(BinaryTreeNode<Key, Value> x, Key key, Value value) {
+    private BinarySearchTreeNode<Key, Value> put(BinarySearchTreeNode<Key, Value> x, Key key, Value value) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> min(BinaryTreeNode<Key, Value> x) {
+    private BinarySearchTreeNode<Key, Value> min(BinarySearchTreeNode<Key, Value> x) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> max(BinaryTreeNode<Key, Value> x) {
+    private BinarySearchTreeNode<Key, Value> max(BinarySearchTreeNode<Key, Value> x) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> deleteMin(BinaryTreeNode<Key, Value> x) {
+    private BinarySearchTreeNode<Key, Value> deleteMin(BinarySearchTreeNode<Key, Value> x) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> deleteMax(BinaryTreeNode<Key, Value> x) {
+    private BinarySearchTreeNode<Key, Value> deleteMax(BinarySearchTreeNode<Key, Value> x) {
         return null; // TODO
     }
 
-    private BinaryTreeNode<Key, Value> delete(BinaryTreeNode<Key, Value> x, Key key) {
+    private BinarySearchTreeNode<Key, Value> delete(BinarySearchTreeNode<Key, Value> x, Key key) {
         return null; // TODO
     }
 
@@ -48,7 +48,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         return size == 0;
     }
 
-    public BinaryTreeNode<Key, Value> getRoot() {
+    public BinarySearchTreeNode<Key, Value> getRoot() {
         return root;
     }
 

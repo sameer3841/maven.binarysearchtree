@@ -1,8 +1,8 @@
 package com.github.curriculeon;
 
-public class BinaryTreeNode<Key extends Comparable<Key>, Value> {
+public class BinarySearchTreeNode<Key extends Comparable<Key>, Value> {
 
-    public BinaryTreeNode(Key key, Value value) {
+    public BinarySearchTreeNode(Key key, Value value) {
     }
 
     public Key getKey() {
@@ -21,19 +21,19 @@ public class BinaryTreeNode<Key extends Comparable<Key>, Value> {
         // TODO
     }
 
-    public BinaryTreeNode<Key, Value> getLeft() {
+    public BinarySearchTreeNode<Key, Value> getLeft() {
         return null; // TODO
     }
 
-    public void setLeft(BinaryTreeNode<Key, Value> left) {
+    public void setLeft(BinarySearchTreeNode<Key, Value> left) {
         // TODO
     }
 
-    public BinaryTreeNode<Key, Value> getRight() {
+    public BinarySearchTreeNode<Key, Value> getRight() {
         return null; // TODO
     }
 
-    public void setRight(BinaryTreeNode<Key, Value> right) {
+    public void setRight(BinarySearchTreeNode<Key, Value> right) {
         // TODO
     }
 
