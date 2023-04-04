@@ -11,7 +11,7 @@
 
 ### What is a `BinarySearchTreeNode`?
 
-A `BinarySearchTreeNode` is a type of binary tree node with an additional property.
+* A `BinarySearchTreeNode` is a type of binary tree node with an additional property.
 * The additional property `BinarySearchTreeNode` has is that values in the left subtree of any given node are less than the value of that node, and the values in the right subtree of any given node are greater than the value of that node.
 * This property is known as the "binary search tree property" and is often used in algorithms for searching, sorting, and indexing data.
 * In Java, a typical implementation of a `BinarySearchTreeNode` has
