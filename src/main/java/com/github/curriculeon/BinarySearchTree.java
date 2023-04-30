@@ -100,6 +100,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
                 }
                 else if (root.getLeft() != null)
                     root = root.getLeft();
+                size--;
                 return root;
             }
             if (root.getKey().compareTo(key) > 0)
