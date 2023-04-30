@@ -15,6 +15,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
     private Value get(BinarySearchTreeNode<Key, Value> x, Key key) {
         BinarySearchTreeNode<Key, Value> compare = root;
+        if(root == null) return null;
         while (compare != null){
             if (compare.getKey().equals(key))
                 return compare.getValue();
@@ -23,7 +24,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
             else if (compare.getKey().compareTo(key) < 0)
                 compare = compare.getRight();
         }
-        return compare.getValue();
+        return null;
     }
 
     private BinarySearchTreeNode<Key, Value> put(BinarySearchTreeNode<Key, Value> x, Key key, Value value) {
@@ -91,7 +92,23 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private BinarySearchTreeNode<Key, Value> delete(BinarySearchTreeNode<Key, Value> x, Key key) {
-        return null; // TODO
+        while (root != null){
+            if (root.getKey().equals(key)){
+                if (root.getRight() != null){
+                    root.getRight().setLeft(root.getLeft());
+                    root = root.getRight();
+                }
+                else if (root.getLeft() != null)
+                    root = root.getLeft();
+                return root;
+            }
+            if (root.getKey().compareTo(key) > 0)
+                root = root.getLeft();
+            else if (root.getKey().compareTo(key) < 0)
+                root = root.getRight();
+        }
+        size--;
+        return null;
     }
 
     public int size() {
@@ -146,5 +163,6 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
     public void delete(Key key) {
         root = delete(root, key);
+
     }
 }
