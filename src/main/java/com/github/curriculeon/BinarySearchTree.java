@@ -67,11 +67,27 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private BinarySearchTreeNode<Key, Value> deleteMin(BinarySearchTreeNode<Key, Value> x) {
-        return null;
+        root = min(root);
+        if (root.getRight() == null)
+            if (root.hasPrev()) {
+                root = root.getPrev();
+                root.setLeft(null);
+            }
+            else root = null;
+        else root = root.getRight();
+        return root;
     }
 
     private BinarySearchTreeNode<Key, Value> deleteMax(BinarySearchTreeNode<Key, Value> x) {
-        return null; // TODO
+        root = max(root);
+        if(root.getLeft() == null)
+            if (root.hasPrev()) {
+                root = root.getPrev();
+                root.setRight(null);
+            }
+            else root = null;
+        else root = root.getLeft();
+        return root;
     }
 
     private BinarySearchTreeNode<Key, Value> delete(BinarySearchTreeNode<Key, Value> x, Key key) {
