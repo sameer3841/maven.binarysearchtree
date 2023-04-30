@@ -16,6 +16,10 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
         return sb.toString();
     }
 
+    public boolean ShouldAdd(BinarySearchTreeNode<Key, Value> node, StringBuilder sb){
+        String value = node.getKey().toString();
+        return !sb.toString().contains(value);
+    }
     private String printPreOrder(BinarySearchTreeNode<Key, Value> node, StringBuilder sb) {
         int limit = 0;
         while (limit < bst.size()){
@@ -33,13 +37,22 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
         return sb.toString();
     }
 
-    public boolean ShouldAdd(BinarySearchTreeNode<Key, Value> node, StringBuilder sb){
-        String value = node.getKey().toString();
-        return !sb.toString().contains(value);
-    }
-
     private String printPostOrder(BinarySearchTreeNode<Key, Value> node, StringBuilder sb) {
-        return null; // TODO
+        int limit = 0;
+        while (limit < bst.size()){
+            if (node.getLeft() != null && ShouldAdd(node.getLeft(), sb))
+                node = node.getLeft();
+            else if (node.getRight() != null && ShouldAdd(node.getRight(), sb))
+                node = node.getRight();
+            else{
+                if (ShouldAdd(node, sb)) {
+                    sb.append(node.getKey()).append("\n");
+                    limit++;
+                }
+                node = node.getPrev();
+            }
+        }
+        return sb.toString();
     }
 
     public String printInOrder() {

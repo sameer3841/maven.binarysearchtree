@@ -9,6 +9,8 @@ public class BinarySearchTreeNode<Key extends Comparable<Key>, Value> {
     private BinarySearchTreeNode prev;
 
     public BinarySearchTreeNode(Key key, Value value) {
+        setLeft(null);
+        setRight(null);
         setKey(key);
         setValue(value);
     }

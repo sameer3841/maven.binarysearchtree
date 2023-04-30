@@ -1,6 +1,7 @@
 package com.github.curriculeon;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
@@ -13,15 +14,51 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private Value get(BinarySearchTreeNode<Key, Value> x, Key key) {
-        return null; // TODO
+        BinarySearchTreeNode<Key, Value> compare = root;
+        while (compare != null){
+            if (compare.getKey().equals(key))
+                return compare.getValue();
+            if (compare.getKey().compareTo(key) > 0)
+                compare = compare.getLeft();
+            else if (compare.getKey().compareTo(key) < 0)
+                compare = compare.getRight();
+        }
+        return compare.getValue();
     }
 
     private BinarySearchTreeNode<Key, Value> put(BinarySearchTreeNode<Key, Value> x, Key key, Value value) {
-        return null; // TODO
+
+        if (key == null || value == null)
+            throw new NullPointerException();
+        if (root == null)
+            x = new BinarySearchTreeNode<>(key, value);
+        else
+            while (root != null)
+                if (root.getKey().compareTo(key) < 0){
+                    if (root.getRight() == null){
+                        root.setRight(new BinarySearchTreeNode<>(key, value));
+                        break;
+                    }
+                    root = root.getRight();
+                }
+                else if (root.getKey().compareTo(key) > 0){
+                    if (root.getLeft() == null){
+                        root.setLeft(new BinarySearchTreeNode<>(key, value));
+                        break;
+                    }
+                    root = root.getLeft();
+                }
+                else{
+                    root.setValue(value);
+                    break;
+                }
+        size++;
+        return x;
     }
 
     private BinarySearchTreeNode<Key, Value> min(BinarySearchTreeNode<Key, Value> x) {
-        return null; // TODO
+        while(root.getLeft() != null) root = root.getLeft();
+        return root;
     }
 
     private BinarySearchTreeNode<Key, Value> max(BinarySearchTreeNode<Key, Value> x) {
@@ -71,7 +108,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         if (isEmpty()) {
             throw new NoSuchElementException("Symbol table is empty");
         }
-        return max(root).getKey();
+        return Objects.requireNonNull(max(root)).getKey();
     }
 
     public void deleteMin() {
