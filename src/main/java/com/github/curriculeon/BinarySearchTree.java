@@ -85,8 +85,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
             if (root.hasPrev()) {
                 root = root.getPrev();
                 root.setRight(null);
-            }
-            else root = null;
+            } else root.setRight(null);
         else root = root.getLeft();
         return root;
     }
