@@ -63,7 +63,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private BinarySearchTreeNode<Key, Value> max(BinarySearchTreeNode<Key, Value> x) {
-        while(root.getLeft() != null) root = root.getRight();
+        while(root.getRight() != null) root = root.getRight();
         return root;
     }
 
@@ -73,8 +73,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
             if (root.hasPrev()) {
                 root = root.getPrev();
                 root.setLeft(null);
-            }
-            else root = null;
+            } else root = null;
         else root = root.getRight();
         return root;
     }
@@ -85,7 +84,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
             if (root.hasPrev()) {
                 root = root.getPrev();
                 root.setRight(null);
-            } else root.setRight(null);
+            } else root = null;
         else root = root.getLeft();
         return root;
     }
